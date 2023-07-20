@@ -88,6 +88,16 @@ SET strar = CASE
             
 ALTER TABLE audible  /*Drop column*/
 DROP COLUMN start;
+---------------------------------------------------------------------------
+-- 6. Price column has variable Free convert to 0
+
+SELECT price
+FROM audible
+WHERE price ='Free'
+
+UPDATE audible
+SET price = 0
+WHERE price ='Free'
 
 ---------------------------------------------------------------------------
 
